@@ -11,8 +11,12 @@ import androidx.appcompat.widget.Toolbar
 import android.view.View
 import android.view.Menu
 import android.view.MenuItem
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
 class TaskActivity : AppCompatActivity() {
+
+    private lateinit var recyclerView: RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,6 +29,21 @@ class TaskActivity : AppCompatActivity() {
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show()
         }
+
+        val data = listOf("dishes", "groceries", "trash", "clean room")
+        recyclerView = findViewById(R.id.task_recycler_view)
+        recyclerView.setLayoutManager(LinearLayoutManager(this))
+        recyclerView.adapter = TaskAdapter(this, data)
+    }
+
+    override fun onResume() {
+        super.onResume()
+        //initialize adapter
+    }
+
+    override fun onPause() {
+        super.onPause()
+        //invalidate adapter
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
