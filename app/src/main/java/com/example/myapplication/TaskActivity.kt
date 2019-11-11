@@ -32,7 +32,7 @@ class TaskActivity : AppCompatActivity() {
 
         val data = listOf("dishes", "groceries", "trash", "clean room")
         recyclerView = findViewById(R.id.task_recycler_view)
-        recyclerView.setLayoutManager(LinearLayoutManager(this))
+        recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = TaskAdapter(this, data)
     }
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
