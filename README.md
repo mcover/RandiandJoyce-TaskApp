@@ -1,5 +1,5 @@
-##TaskApp<br/>
-###Task Management Tool<br/>
+## TaskApp<br/>
+### Task Management Tool<br/>
 
 **TODO** - Schedule recurring and one time tasks and see a list of outstanding tasks.<br/>
 **TODO** - Complete tasks and dismiss.<br/>
