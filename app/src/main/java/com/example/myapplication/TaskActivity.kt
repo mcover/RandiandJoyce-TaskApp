@@ -24,11 +24,10 @@ class TaskActivity : FragmentActivity() {
                     .setAction("Action", null).show()
         }
 
-        //initialize fragment
+        //initialize fragment WHY IS THIS NOT WORKING
         val fragmentManager = supportFragmentManager
-        val fragment = fragmentManager.findFragmentById(R.id.recycler_view_fragment)?: TaskListFragment()
         fragmentManager.beginTransaction()
-                .add(R.id.fragment_holder, fragment)
+                .add(R.id.fragment_holder, TaskListFragment())
                 .commit()
 
     }
