@@ -29,8 +29,8 @@
         app:srcCompat="@android:drawable/ic_input_add" />
 
     <FrameLayout
-        android:layout_width="10dp"
-        android:layout_height="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:id="@+id/fragment_holder">
     </FrameLayout>
 
