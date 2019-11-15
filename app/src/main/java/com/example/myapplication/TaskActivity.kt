@@ -5,24 +5,18 @@ import android.os.Bundle
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 
-import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
-
-import android.view.View
+import android.widget.Toolbar
 import android.view.Menu
 import android.view.MenuItem
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import androidx.fragment.app.FragmentActivity
 
-class TaskActivity : AppCompatActivity() {
-
-    private lateinit var recyclerView: RecyclerView
+class TaskActivity : FragmentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
-        setSupportActionBar(toolbar)
+        setActionBar(toolbar)
 
         val fab = findViewById<FloatingActionButton>(R.id.fab)
         fab.setOnClickListener { view ->
@@ -30,10 +24,12 @@ class TaskActivity : AppCompatActivity() {
                     .setAction("Action", null).show()
         }
 
-        val data = listOf("dishes", "groceries", "trash", "clean room")
-        recyclerView = findViewById(R.id.task_recycler_view)
-        recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.adapter = TaskAdapter(this, data)
+        //initialize fragment WHY IS THIS NOT WORKING
+        val fragmentManager = supportFragmentManager
+        fragmentManager.beginTransaction()
+                .add(R.id.fragment_holder, TaskListFragment())
+                .commit()
+
     }
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
