@@ -1,17 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cardView="http://schemas.android.com/apk/res-auto"
     android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    cardView:contentPadding="16dp">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="sample task name"
-        android:layout_gravity="top"
-        android:id="@+id/task_name"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp">
-    </TextView>
-
-</LinearLayout>
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="sample task name"
+            android:id="@+id/task_name"
+            android:gravity="left">
+        </TextView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/task_date"
+            android:text="sample date"
+            android:gravity="end">
+        </TextView>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
